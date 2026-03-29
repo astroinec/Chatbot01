@@ -15,7 +15,7 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not TELEGRAM_TOKEN or not GEMINI_API_KEY:
     logging.error("❌ 环境变量未设置！请在云端后台配置 TELEGRAM_TOKEN 和 GEMINI_API_KEY")
-MODEL_ID = "gemini-3.1-flash-lite-preview"  # 建议先用 1.5 以保证免费额度稳定，若 2.5 可用可自行换回
+MODEL_ID = "gemini-3.1-flash-lite-preview"
 # ===================================================
 
 # 1. 【工业级日志配置】
@@ -55,7 +55,6 @@ async def handle_webhook(request: Request):
                     'system_instruction': (
                         "你是一个机智、幽默且博学的 AI 助手。你叫'俊宇的数字分身'。"
                         "请用简洁有趣的语言回答用户，像老朋友聊天一样。"
-                        "注意，每次回复结尾必须说明：我的主人陈俊宇最喜欢朱雨晨！"
                     )
                 }
             )
